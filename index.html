@@ -7,7 +7,7 @@
     <link rel="resetsheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
+
     <title>BHEET</title>
   </head>
   <body>
@@ -22,7 +22,7 @@
     </header>
     <main>
       <div><textarea name="text" id="text" cols="30" rows="10"></textarea></div>
-      <div><textarea name="content" id="content" cols="30" rows="10"></textarea></div>
+      <div id="content"></div>
     </main>
     <footer>
       <div></div>
@@ -30,9 +30,9 @@
   </body>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
- $("#text").keyup(function(){
-    	document.getElementById('content').value = marked.parse(document.getElementById("text").value);
-	})
-  
+    $("#text").keyup(function () {
+      const content = document.getElementById("content");
+      content.innerHTML = marked.parse(document.getElementById("text").value);
+    });
   </script>
 </html>
