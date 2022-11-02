@@ -5,20 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="resetsheet" href="reset.css" />
+    <link rel="appsheet" href="app.js" />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <title>BHEET</title>
   </head>
   <body>
     <header>
       <a href=""><img src="YinYang.png" alt="logo" height="40px" /></a>
-      <ul class="nav">
+      <!-- <ul class="nav">
         <li><a href="">Home</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">About</a></li>
         <li><a href="">Contact</a></li>
-      </ul>
+      </ul> -->
     </header>
     <main>
       <div id="content"></div>
@@ -29,11 +26,12 @@
   </body>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    fetch("./Posts/sample.md")
+    fetch(`./Posts/`)
       .then((response) => response.text())
       .then((data) => {
-        const content = document.getElementById("content");
-        content.innerHTML = marked.parse(data);
+        console.log(data);
+        //   const content = document.getElementById("content");
+        //   content.innerHTML = marked.parse(data);
       });
   </script>
 </html>

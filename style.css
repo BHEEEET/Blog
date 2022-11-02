@@ -15,6 +15,8 @@ body {
   grid-template-rows: 1fr 12fr 3fr;
   height: 100vh;
   margin: 0;
+  background-color: rgb(21, 21, 21);
+  color: rgb(202, 202, 202);
 }
 
 header {
@@ -23,7 +25,7 @@ header {
 .nav {
   padding: 0;
   position: absolute;
-  right: 45%;
+  right: 48%;
   top: 0;
 }
 
@@ -35,7 +37,7 @@ a img:hover {
   height: 41px;
 }
 
-li {
+.nav li {
   font-size: 20px;
   padding: 2px;
   list-style-type: none;
@@ -44,11 +46,12 @@ li {
 
 li a {
   text-decoration: none;
-  color: black;
+  color: rgb(202, 202, 202);
 }
 
 main {
   margin: 0 auto;
+  width: 50vw;
 }
 
 footer {
