@@ -21,7 +21,6 @@
       </ul>
     </header>
     <main>
-      <div><textarea name="text" id="text" cols="30" rows="10"></textarea></div>
       <div id="content"></div>
     </main>
     <footer>
@@ -30,9 +29,11 @@
   </body>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    $("#text").keyup(function () {
-      const content = document.getElementById("content");
-      content.innerHTML = marked.parse(document.getElementById("text").value);
-    });
+    fetch("./Posts/sample.md")
+      .then((response) => response.text())
+      .then((data) => {
+        const content = document.getElementById("content");
+        content.innerHTML = marked.parse(data);
+      });
   </script>
 </html>
