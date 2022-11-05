@@ -19,9 +19,6 @@ body {
   color: rgb(202, 202, 202);
 }
 
-header {
-}
-
 .nav {
   padding: 0;
   position: absolute;
@@ -30,7 +27,7 @@ header {
 }
 
 img {
-  margin: 5px 10px;
+  margin: 5px 48vw;
 }
 
 a img:hover {
@@ -44,9 +41,9 @@ a img:hover {
   display: inline-block;
 }
 
-li a {
-  text-decoration: none;
-  color: rgb(202, 202, 202);
+li{
+  font-size: 30px;
+  list-style-type: none;
 }
 
 main {
