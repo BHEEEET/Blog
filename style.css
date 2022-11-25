@@ -9,6 +9,9 @@ html {
 *:after {
   box-sizing: inherit;
 }
+main {
+  background-color: rgb(21, 21, 21);
+}
 
 body {
   display: grid;
@@ -52,6 +55,13 @@ li a {
 main {
   margin: 0 auto;
   width: 50vw;
+}
+li:nth-child(1) {
+  display: none;
+}
+
+.size {
+  display: none;
 }
 
 footer {
