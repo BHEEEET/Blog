@@ -1,4 +1,4 @@
-fetch(`./Posts/`)
+fetch(`../Posts/`)
   .then((response) => response.text())
   .then((data) => {
     //Parse the data to html
