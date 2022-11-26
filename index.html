@@ -34,15 +34,24 @@
         // Get the files
         var files = api.querySelector("ul");
         var element = files.querySelectorAll("li");
-        //Seperate titles
-        var text = element[1].innerText;
-        var titles = text.split(".");
-        console.log(titles[0]);
+        //Seperate titles and push them in a array
+        var list = [];
+        for (var i = 0; i < element.length; i++) {
+          var text = element[i].innerText;
+          var titles = text.split(".md");
+          var title = titles[0];
+          list.push(title);
+        }
+        console.log(list);
         var content = document.querySelector("main");
         content.append(files);
-        console.log(files);
         //Parse data throught .md parser
-        //content.innerHTML = marked.parse(data);
+        fetch(`./Posts/sample.md`)
+          .then((response) => response.text())
+          .then((md) => {
+            var mark = marked.parse(md);
+            //console.log(mark);
+          });
       });
   </script>
 </html>
