@@ -9,10 +9,6 @@ html {
 *:after {
   box-sizing: inherit;
 }
-main {
-  background-color: rgb(21, 21, 21);
-  color: black;
-}
 
 body {
   display: grid;
@@ -22,8 +18,8 @@ body {
   background-color: rgb(21, 21, 21);
   color: rgb(202, 202, 202);
 }
-
 header {
+  margin: 0 auto;
 }
 
 .nav {
@@ -48,10 +44,6 @@ a img:hover {
   display: inline-block;
 }
 
-ul {
-  list-style-type: none;
-}
-
 li a {
   text-decoration: none;
   color: rgb(202, 202, 202);
@@ -61,8 +53,18 @@ li a {
 main {
   margin: 0 auto;
   width: 50vw;
+  list-style-type: none;
 }
-li:nth-child(1) {
+main > li {
+  padding: 1rem;
+  font-size: 25px;
+}
+.date {
+  color: grey;
+  display: block;
+  font-size: 12px;
+}
+main > li:nth-child(1) {
   display: none;
 }
 
