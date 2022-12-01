@@ -1,5 +1,5 @@
    var content = document.querySelector("main");
-   
+   import key from "./token.json" assert {type: 'json'};
     //Parse data throught .md parser
     fetch(`./Posts/sample.md`)
       .then((response) => response.text())
@@ -8,7 +8,11 @@
         //console.log(mark);
       });
 
-      fetch(`https://api.github.com/repos/KRKBHEET/Blog/contents/Posts`)
+      fetch(`https://api.github.com/repos/KRKBHEET/Blog/contents/Posts/`,{
+        'headers': {
+          'Authorization': key.GITHUB_ACCES_TOKEN 
+        }
+        })
       .then((response) => response.json())
       .then((GitPosts) => {
         GitPosts.forEach(Post => {
@@ -24,11 +28,14 @@
         console.log(GitPosts);
       });
       let Gcontent= [];
-      fetch(`https://api.github.com/repos/KRKBHEET/Blog/contents/Posts/sample.md?ref=master`)
+      fetch(`https://api.github.com/repos/KRKBHEET/Blog/contents/Posts/sample.md?ref=master`,{
+        'headers': {
+          'Authorization': key.GITHUB_ACCES_TOKEN 
+        }
+        })
       .then((response) => response.json())
       .then((md) => {
         console.log("__________________");
         var decoded = atob(md.content);
         console.log(decoded);
       });
-
