@@ -1,5 +1,5 @@
    var content = document.querySelector("main");
-
+   
     //Parse data throught .md parser
     fetch(`./Posts/sample.md`)
       .then((response) => response.text())
@@ -18,16 +18,17 @@
           li.append(a);
           a.innerText = Post.name;
           a.href = Post.path;
-          content.append(li)
+          content.append(li);
         });
-        console.log("Title lists")
+        console.log("Title lists");
         console.log(GitPosts);
       });
       let Gcontent= [];
       fetch(`https://api.github.com/repos/KRKBHEET/Blog/contents/Posts/sample.md?ref=master`)
       .then((response) => response.json())
       .then((md) => {
-        console.log("__________________")
-        var decoded = atob(md.content)
-        console.log(decoded)
+        console.log("__________________");
+        var decoded = atob(md.content);
+        console.log(decoded);
       });
+
