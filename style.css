@@ -73,4 +73,18 @@ main > li:nth-child(1) {
 }
 
 footer {
+  border-top: 1px solid white;
+}
+
+footer>div{
+  ;
+  text-align: center;
+  margin: 0 auto;
+}
+
+footer>div>ul{
+  list-style-type: none;
+}
+footer>div>ul>li{
+  display: inline-block;
 }
