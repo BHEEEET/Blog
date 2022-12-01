@@ -1,30 +1,4 @@
-fetch(`./Posts/`)
-  .then((response) => response.text())
-  .then((data) => {
-    //Parse the data to html
-    var parser = new DOMParser();
-    var posts = parser.parseFromString(data, "text/html");
-
-    // Get the files
-    var files = posts.querySelector("ul");
-    var li = files.querySelectorAll("li");
-    var content = document.querySelector("main");
-
-    //Seperate titles and push them in a array
-    var list = [];
-    for (var i = 0; i < li.length; i++) {
-      var text = li[i].innerText;
-
-      //split the innerText from ".md"
-      var titles = text.split(".md");
-      var title = titles[0];
-      list.push(title);
-      var name = li[i].getElementsByClassName("name");
-
-      //change the innerHTML of the "name" span's
-      name.item(0).innerHTML = title;
-      content.append(li[i]);
-    }
+   var content = document.querySelector("main");
 
     //Parse data throught .md parser
     fetch(`./Posts/sample.md`)
@@ -39,6 +13,12 @@ fetch(`./Posts/`)
       .then((GitPosts) => {
         GitPosts.forEach(Post => {
           Post.name = Post.name.slice(0,(Post.name.length - 3))
+          let li = document.createElement("li");
+          let a = document.createElement("a");
+          li.append(a);
+          a.innerText = Post.name;
+          a.href = Post.path;
+          content.append(li)
         });
         console.log("Title lists")
         console.log(GitPosts);
@@ -51,6 +31,3 @@ fetch(`./Posts/`)
         var decoded = atob(md.content)
         console.log(decoded)
       });
-
-
-  });

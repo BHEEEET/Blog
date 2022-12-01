@@ -64,9 +64,6 @@ main > li {
   display: block;
   font-size: 12px;
 }
-main > li:nth-child(1) {
-  display: none;
-}
 
 .size {
   display: none;
