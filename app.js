@@ -1,5 +1,4 @@
-require('dotenv').config();
-require('marked');
+import dotenv from 'dotenv';
 
 var content = document.querySelector("main");
 let li;
